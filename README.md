@@ -1,2 +1,3 @@
-# Ejercicio_DOM
-Ejercicio Document Object Model (DOM)
+# **Ejercicio_DOM**
+---
+## *Ejercicio Document Object Model (DOM)*
