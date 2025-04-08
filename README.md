@@ -27,4 +27,4 @@ git push origin main
 
 > Vista previa del index.html
 
-![Image]()
+![Index](https://raw.githubusercontent.com/Eduardo-Mtz-Jrz/Ejercicio_DOM/refs/heads/main/images/index.png)
