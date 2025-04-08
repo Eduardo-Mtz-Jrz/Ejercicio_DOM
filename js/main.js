@@ -50,5 +50,24 @@ console.log(otrosElementos.length);
 // Contador de eventos
 btnMostrar.addEventListener("click", function(event){
     event.preventDefault(); // No hagas lo que haces por defecto
-    console.log("boton btnMostrar presionado");
+    // console.log("boton btnMostrar presionado");
+
+    // Crear elementos en document, su contenido y clase
+    let element = document.createElement("li"); // Crea un elemento vacio en el arbol del document
+    element.innerText = "Another item"; // Crea un <li>Anothe item</li>
+    element.classList.add("list-group-item"); // Agrega la clase y "el formato" que viene con esta <li>
+    
+    // Posición del elemento creado
+    // Se respeta la instrucción del ulitmo comando si se aplica A UN MISMO ELEMENTO
+    // .before Inserta el elemento antes de la lista
+    listas.item(0).before(element); // Al estar antes de la lista, no se le aplica el "formato" de la clase <ul>
+    // .prepend Inserta el elemento al principio de la lista
+    // listas.item(0).prepend(element); // Al crearse dentro de la clase <li> si se le aplica "el formato" de la clase
+
+    let element2 = element.cloneNode(true); // .cloneNode realiza la copia del nodo, como el comando git clone 
+    // .append Inserta el elemento al final de la lista
+    // listas.item(0).append(element2); // Al crearse dentro de la clase <li> si se le aplica "el formato" de la clase
+    // .after Inserta el elemento despues de la lista
+    listas.item(0).after(element2); // Al despues de la lista, no se le aplica el "formato" de la clase <ul>
+
 }); // Agrega escuchador de eventos
