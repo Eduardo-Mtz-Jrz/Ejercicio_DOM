@@ -52,12 +52,12 @@ btnMostrar.addEventListener("click", function(event){
     event.preventDefault(); // No hagas lo que haces por defecto
     // console.log("boton btnMostrar presionado");
 
-    // Crear elementos en document, su contenido y clase
+    // Crear elementos en document (contenido y clase)
     let element = document.createElement("li"); // Crea un elemento vacio en el arbol del document
     element.innerText = "Another item"; // Crea un <li>Anothe item</li>
     element.classList.add("list-group-item"); // Agrega la clase y "el formato" que viene con esta <li>
     
-    // Posición del elemento creado
+    // Posición del elemento creado al agregarlo
     // Se respeta la instrucción del ulitmo comando si se aplica A UN MISMO ELEMENTO
     // .before Inserta el elemento antes de la lista
     listas.item(0).before(element); // Al estar antes de la lista, no se le aplica el "formato" de la clase <ul>
@@ -70,4 +70,22 @@ btnMostrar.addEventListener("click", function(event){
     // .after Inserta el elemento despues de la lista
     listas.item(0).after(element2); // Al despues de la lista, no se le aplica el "formato" de la clase <ul>
 
+    // .insertAdjacentElement - Agrega un elemento previamente creado ("posicion", elemento a agregar)
+    // .prepend Inserta el elemento al principio de la lista
+    // listas.item(1).insertAdjacentElement("afterbegin", element); 
+    // .append Inserta el elemento al final de la lista
+    // listas.item(1).insertAdjacentElement("beforeend", element2);
+
+    // .insertAdjacentHTML - Agrega un elemento creandolo en `HTML`
+    listas.item(1).insertAdjacentHTML("beforebegin", 
+        `<li class="list-group-item">Before Begin item</li>`);
+    
+    listas.item(1).insertAdjacentHTML("afterbegin", 
+        `<li class="list-group-item">After Begin item</li>`);
+    
+    listas.item(1).insertAdjacentHTML("afterend", 
+        `<li class="list-group-item">After End item</li>`);
+    
+    listas.item(1).insertAdjacentHTML("beforeend", 
+        `<li class="list-group-item">Before End item</li>`);
 }); // Agrega escuchador de eventos
