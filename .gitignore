@@ -1,0 +1,5 @@
+tareas.txt
+.vscode/*
+DS_Store
+# .vscode/* - Carpeta de extensiones descargadas en Visual Code
+# DS_Store - Carpeta que se crea por default en MAC 
