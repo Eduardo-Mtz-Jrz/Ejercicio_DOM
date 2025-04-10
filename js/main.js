@@ -1,5 +1,8 @@
 // 
 let btnMostrar = document.getElementById("btnMostrar");
+let txtRFC = document.getElementById("txtRFC");
+let txtCURP = document.getElementById("txtCURP");
+let txtTelefono = document.getElementById("txtTelefono");
 
 // document Es el punto de inicio para acceder a los elementos del HTML
 // document hace referencia a la pagina en la que esta corriendo/ejecutando el script
@@ -89,3 +92,35 @@ btnMostrar.addEventListener("click", function(event){
     listas.item(1).insertAdjacentHTML("beforeend", 
         `<li class="list-group-item">Before End item</li>`);
 }); // Agrega escuchador de eventos
+
+// load - Se ejecuta cuando termina de cargar todos los elementos de la pagina
+window.addEventListener("load", function(event){
+    console.log("Se termino de cargar la pagina");
+});
+
+function txtToUpper(event){
+    event.preventDefault();
+    event.target.value = event.target.value.trim().toUpperCase();
+}
+
+txtRFC.addEventListener("blur", txtToUpper); // Reduce el número de línas al crear una función general
+txtCURP.addEventListener("blur", txtToUpper); // Son los mismos eventos que el codigo comentado
+
+// blur - Cuando se sale del campo, cuando se cambia del campo donde estoy escribiendo 
+// txtRFC.addEventListener("blur", function(event){
+//     event.preventDefault(); // No hagas lo que haces por defecto
+//     // txtRFC.value = txtRFC.value.toUpperCase(); // Cambia el texto a mayusculas 
+// });
+
+// txtCURP.addEventListener("blur", function(event){
+//     event.preventDefault(); // No hagas lo que haces por defecto
+//     txtCURP.value = txtCURP.value.toUpperCase(); // Cambia el texto a mayusculas 
+// });
+
+txtTelefono.addEventListener("blur", function(event){
+    event.preventDefault();
+    txtTelefono.value = txtTelefono.value.replace(/\s+/g, '').slice(0,10); // Ayuda a limitar la cantidad de caracteres que deben ser ingresados
+    // .trim() - Elimina los espacio en blanco al principio y al final, no afecta los espacios blancos intermedios
+    // .replace(/\s+/g, '') - Elimina todos los espacios en blanco sin importar su posición
+
+})
